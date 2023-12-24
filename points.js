@@ -55,8 +55,10 @@ export function generatePoints({
 
     console.warn('rate not implemented')
     console.warn('offset not implemented')
-    console.warn('begin not implemented')
-    console.warn('end not implemented')
+
+    const size = end - begin;
+    points = points.map(([x, y]) => [x, y * size - begin])
+
     console.warn('length not implemented')
     console.warn('direction not implemented')
 
