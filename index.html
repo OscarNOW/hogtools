@@ -7,6 +7,7 @@
     <title>Hello world</title>
 
     <link rel="stylesheet" href="index.css">
+    <script type=module src="./index.js"></script>
 </head>
 
 <body>
@@ -30,7 +31,8 @@
         </div>
         <div>
             <p>Rate</p>
-            <input type="text" maxlength="6" placeholder="10bpm" size="7" spellcheck="false">
+            <input type="text" placeholder="10bpm" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="bpm">
         </div>
         <div>
             <p>Beats</p>
@@ -38,27 +40,33 @@
         </div>
         <div>
             <p>Size</p>
-            <input type="text" maxlength="4" placeholder="50%" size="7" spellcheck="false">
+            <input type="text" placeholder="50%" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="percent_0_inf">
         </div>
         <div>
             <p>Offset</p>
-            <input type="text" maxlength="2" placeholder="0°" size="7" spellcheck="false">
+            <input type="text" placeholder="0°" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="degree">
         </div>
         <div>
             <p>Begin</p>
-            <input type="text" maxlength="5" placeholder="-50%" size="7" spellcheck="false">
+            <input type="text" placeholder="-50%" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="percent_inf_inf">
         </div>
         <div>
             <p>End</p>
-            <input type="text" maxlength="5" placeholder="50%" size="7" spellcheck="false">
+            <input type="text" placeholder="50%" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="percent_inf_inf">
         </div>
         <div>
             <p>Start</p>
-            <input type="text" maxlength="5" placeholder="0%" size="7" spellcheck="false">
+            <input type="text" placeholder="0%" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="percent_inf_inf">
         </div>
         <div>
             <p>Length</p>
-            <input type="text" maxlength="4" placeholder="100%" size="7" spellcheck="false">
+            <input type="text" placeholder="100%" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="percent_inf_inf">
         </div>
         <div>
             <p>N Shot</p>
@@ -81,11 +89,13 @@
         </div>
         <div>
             <p>Fade</p>
-            <input type="text" maxlength="4" placeholder="2s" size="7" spellcheck="false">
+            <input type="text" maxlength="4" placeholder="2s" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="time">
         </div>
         <div>
             <p>Delay</p>
-            <input type="text" maxlength="4" placeholder="0s" size="7" spellcheck="false">
+            <input type="text" maxlength="4" placeholder="0s" size="7" spellcheck="false" class="js-validation"
+                data-validation-type="time">
         </div>
         <div>
             <p>Path</p>
