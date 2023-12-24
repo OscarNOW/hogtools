@@ -5,88 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello world</title>
+
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div>
-        <p>Table</p>
-        <select>
-            <option value="sine">Sine</option>
-            <option value="tangent">Tangent</option>
-            <option value="step">Step</option>
-            <option value="saw-tooth">Saw-tooth</option>
-            <option value="ramp">Ramp</option>
-            <option value="invRamp">InvRamp</option>
-            <option value="mark-on">Mark-on</option>
-            <option value="mark-off">Mark-off</option>
-            <option value="spiral">Spiral</option>
-            <option value="rand1">Rand1</option>
-            <option value="rand2">Rand2</option>
-            <option value="rand3">Rand3</option>
-        </select>
-    </div>
-    <div>
-        <p>Rate</p>
-        <input type="text" maxlength="6" placeholder="10bpm" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>Beats</p>
-        <input type="text" placeholder="(?)" size="7" readonly=true spellcheck="false">
-    </div>
-    <div>
-        <p>Size</p>
-        <input type="text" maxlength="4" placeholder="50%" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>Offset</p>
-        <input type="text" maxlength="2" placeholder="0°" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>Begin</p>
-        <input type="text" maxlength="5" placeholder="-50%" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>End</p>
-        <input type="text" maxlength="5" placeholder="50%" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>Start</p>
-        <input type="text" maxlength="5" placeholder="0%" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>Length</p>
-        <input type="text" maxlength="4" placeholder="100%" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>N Shot</p>
-        <input type="text" placeholder="(?)" size="7" readonly=true spellcheck="false">
-    </div>
-    <div>
-        <p>Bounce</p>
-        <input type="checkbox">
-    </div>
-    <div>
-        <p>Direction</p>
-        <select>
-            <option value="forward">Forward</option>
-            <option value="reverse">Reverse</option>
-        </select>
-    </div>
-    <div>
-        <p>Sync</p>
-        <input type="text" placeholder="(?)" size="7" readonly=true spellcheck="false">
-    </div>
-    <div>
-        <p>Fade</p>
-        <input type="text" maxlength="4" placeholder="2s" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>Delay</p>
-        <input type="text" maxlength="4" placeholder="0s" size="7" spellcheck="false">
-    </div>
-    <div>
-        <p>Path</p>
-        <input type="text" placeholder="(?)" size="7" readonly=true spellcheck="false">
+    <div class="properties">
+        <div>
+            <p>Table</p>
+            <select>
+                <option value="sine">Sine</option>
+                <option value="tangent">Tangent</option>
+                <option value="step">Step</option>
+                <option value="saw-tooth">Saw-tooth</option>
+                <option value="ramp">Ramp</option>
+                <option value="invRamp">InvRamp</option>
+                <option value="mark-on">Mark-on</option>
+                <option value="mark-off">Mark-off</option>
+                <option value="spiral">Spiral</option>
+                <option value="rand1">Rand1</option>
+                <option value="rand2">Rand2</option>
+                <option value="rand3">Rand3</option>
+            </select>
+        </div>
+        <div>
+            <p>Rate</p>
+            <input type="text" maxlength="6" placeholder="10bpm" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>Beats</p>
+            <input type="text" placeholder="(?)" size="7" readonly=true spellcheck="false">
+        </div>
+        <div>
+            <p>Size</p>
+            <input type="text" maxlength="4" placeholder="50%" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>Offset</p>
+            <input type="text" maxlength="2" placeholder="0°" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>Begin</p>
+            <input type="text" maxlength="5" placeholder="-50%" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>End</p>
+            <input type="text" maxlength="5" placeholder="50%" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>Start</p>
+            <input type="text" maxlength="5" placeholder="0%" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>Length</p>
+            <input type="text" maxlength="4" placeholder="100%" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>N Shot</p>
+            <input type="text" placeholder="(?)" size="7" readonly=true spellcheck="false">
+        </div>
+        <div>
+            <p>Bounce</p>
+            <input type="checkbox">
+        </div>
+        <div>
+            <p>Direction</p>
+            <select>
+                <option value="forward">Forward</option>
+                <option value="reverse">Reverse</option>
+            </select>
+        </div>
+        <div>
+            <p>Sync</p>
+            <input type="text" placeholder="(?)" size="7" readonly=true spellcheck="false">
+        </div>
+        <div>
+            <p>Fade</p>
+            <input type="text" maxlength="4" placeholder="2s" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>Delay</p>
+            <input type="text" maxlength="4" placeholder="0s" size="7" spellcheck="false">
+        </div>
+        <div>
+            <p>Path</p>
+            <input type="text" placeholder="(?)" size="7" readonly=true spellcheck="false">
+        </div>
     </div>
 </body>
 
