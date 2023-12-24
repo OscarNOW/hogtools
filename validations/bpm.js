@@ -1,8 +1,11 @@
 export function bpm(input) {
-    let amount = parseInt(input);
+    let value = parseInt(input);
 
-    if (isNaN(amount))
-        return null;
+    if (isNaN(value))
+        return { text: null, value: null };
 
-    return `${amount}bpm`;
+    return {
+        text: `${value}bpm`,
+        value
+    };
 }

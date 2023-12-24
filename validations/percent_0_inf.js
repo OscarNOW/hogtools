@@ -1,11 +1,14 @@
 export function percent_0_inf(input) {
-    let amount = parseInt(input);
+    let percentage = parseInt(input);
 
-    if (isNaN(amount))
-        return null;
+    if (isNaN(percentage))
+        return { text: null, value: null };
 
-    if (amount < 0)
-        amount = 0;
+    if (percentage < 0)
+        percentage = 0;
 
-    return `${amount}%`;
+    return {
+        text: `${percentage}%`,
+        value: percentage / 100
+    };
 }

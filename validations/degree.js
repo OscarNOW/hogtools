@@ -1,13 +1,16 @@
 export function degree(input) {
-    let amount = parseInt(input);
+    let degrees = parseInt(input);
 
-    if (isNaN(amount))
-        return null;
+    if (isNaN(degrees))
+        return { text: null, value: null };
 
-    amount = amount % 360;
+    degrees = degrees % 360;
 
-    if (amount < 0)
-        amount = amount + 360;
+    if (degrees < 0)
+        degrees = degrees + 360;
 
-    return `${amount}°`;
+    return {
+        text: `${degrees}°`,
+        value: degrees / 360
+    };
 }

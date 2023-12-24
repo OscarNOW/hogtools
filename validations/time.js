@@ -24,13 +24,14 @@ export function time(inp) {
     if (secondAmount < 0)
         secondAmount = 0;
 
+    let secondAmountLeft;
     let typeAmounts = [];
 
     for (const [type, typeSecondAmount] of [...typeCharacters].reverse()) {
         let typeAmount = 0;
 
-        typeAmount = Math.floor(secondAmount / typeSecondAmount);
-        secondAmount -= typeAmount * typeSecondAmount;
+        typeAmount = Math.floor(secondAmountLeft / typeSecondAmount);
+        secondAmountLeft -= typeAmount * typeSecondAmount;
 
         typeAmounts.push(typeAmount);
     }
@@ -51,7 +52,10 @@ export function time(inp) {
         output += `${typeAmount}${typeCharacters[index][0]}${index == 0 ? '' : ' '}`;
     }
 
-    return output;
+    return {
+        text: output,
+        value: secondAmount
+    };
 }
 
 window.a = time;

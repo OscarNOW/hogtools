@@ -5,20 +5,27 @@ const wait = ms => new Promise(res => setTimeout(res, ms));
 
 const elements = [...document.getElementsByClassName('propertyInput')];
 
+const properties = {};
+
 for (const element of elements) {
     const validationType = element.dataset.validationType;
     let validationFunction = validations[validationType];
 
     if (!validationFunction) {
         console.error(`Unknown validation type: ${validationType}`);
-        validationFunction = inp => (inp || null);
+        validationFunction = inp => (inp ? { text: inp, value: parseFloat(inp) } : { text: null, value: null });
     };
 
-    const changeCallback = (input) => {
-        element.value = validationFunction(input ?? element.value) ?? element.placeholder;
+    const changeCallback = (input, preventGlobalChange) => {
+        element.value = validationFunction(input ?? element.value).text ?? element.placeholder;
         onGlobalChange();
     };
-    changeCallback(element.placeholder);
+
+    properties[element.id] = {
+        element,
+        validationFunction,
+        changeCallback
+    };
 
     element.addEventListener('keypress', async event => {
         if (event.key === 'Enter') {
@@ -31,19 +38,12 @@ for (const element of elements) {
     element.addEventListener('blur', () => changeCallback());
     element.addEventListener('click', () => element.select());
 }
+for (const { changeCallback } of Object.values(properties))
+    changeCallback(null, true);
+onGlobalChange();
+
 
 function onGlobalChange() {
-    //todo: convert all to real values (for example: 50% to 0.5)
-
-    const points = generatePoints({
-        table: document.getElementById('table').value,
-        rate: document.getElementById('rate').value,
-        offset: document.getElementById('offset').value,
-        begin: document.getElementById('begin').value,
-        end: document.getElementById('end').value,
-        length: document.getElementById('length').value,
-        direction: document.getElementById('direction').value
-    });
-
+    const points = generatePoints(Object.values(properties).map(({ validationFunction, element }) => validationFunction(element.value).value))
     render(points);
 }
