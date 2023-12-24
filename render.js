@@ -10,7 +10,7 @@ export function render(points) {
     ctx.beginPath();
 
     for (const [x, y] of points)
-        ctx.lineTo(x * xScale, (1 - y) * yScale);
+        ctx.lineTo(x * xScale, (y * -0.5 + 0.5) * yScale);
 
     ctx.stroke();
 }

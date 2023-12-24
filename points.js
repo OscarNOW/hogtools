@@ -1,10 +1,10 @@
 const tablePoints = {
     sine: generateSineTablePoints({ precision: 100 }),
     tangent: generateTangentTablePoints({ precision: 100 }),
-    step: [[0.49, 1], [0.51, 0]],
-    sawTooth: [[0, 0.5], [0.25, 1], [0.75, 0], [1, 0.5]],
-    ramp: [[0, 0], [1, 1]],
-    invRamp: [[0, 1], [1, 0]],
+    step: [[0.49, 1], [0.51, -1]],
+    sawTooth: [[0, 0], [0.25, 1], [0.75, -1], [1, 1]],
+    ramp: [[0, -1], [1, 1]],
+    invRamp: [[0, 1], [1, -1]],
     markOn: [],
     markOff: [],
     spiral: [],
@@ -57,7 +57,7 @@ export function generatePoints({
     console.warn('offset not implemented')
 
     const size = end - begin;
-    points = points.map(([x, y]) => [x, y * size - begin])
+    points = points.map(([x, y]) => [x, y * size + begin])
 
     console.warn('length not implemented')
     console.warn('direction not implemented')
