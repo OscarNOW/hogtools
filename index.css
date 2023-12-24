@@ -22,3 +22,8 @@ input[type="text"]:read-only {
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+#render {
+    border: 1px solid black;
+    margin: 20px;
+}
