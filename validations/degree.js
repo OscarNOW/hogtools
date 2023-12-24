@@ -1,7 +1,8 @@
 export function degree(input) {
     let amount = parseInt(input);
+
     if (isNaN(amount))
-        amount = 0;
+        return null;
 
     amount = amount % 360;
 

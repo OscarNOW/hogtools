@@ -11,7 +11,7 @@ export function time(inp) {
     if (input[input.length - 1].trim() !== '') input[input.length - 1] = input[input.length - 1] + 's';
     input = input.filter(x => x.length > 0);
     input = input.map(x => [x.substring(0, x.length - 1), x[x.length - 1]]);
-    if (input.length === 0) input.push(['0', 's']);
+    if (input.length === 0) return null;
     input = input.map(([amount, type]) => ([parseFloat(amount), type]));
     input = input.map(([amount, type]) => ([isNaN(amount) ? 0 : amount, type]));
 

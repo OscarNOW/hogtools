@@ -9,11 +9,11 @@ for (const element of elements) {
 
     if (!validationFunction) {
         console.error(`Unknown validation type: ${validationType}`);
-        validationFunction = inp => (inp || element.placeholder);
+        validationFunction = inp => (inp || null);
     };
 
     const changeCallback = (input) => {
-        element.value = validationFunction(input ?? element.value);
+        element.value = validationFunction(input ?? element.value) ?? element.placeholder;
     };
 
     element.addEventListener('keypress', async event => {

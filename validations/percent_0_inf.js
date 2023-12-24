@@ -1,7 +1,8 @@
 export function percent_0_inf(input) {
     let amount = parseInt(input);
+
     if (isNaN(amount))
-        amount = 50;
+        return null;
 
     if (amount < 0)
         amount = 0;
