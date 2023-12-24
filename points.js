@@ -34,6 +34,7 @@ export function generatePoints({
 }) {
     let points = tablePoints[table];
 
+    if (!points) throw new Error(`Unknown table ${table}`)
     if (points.length === 0) throw new Error(`${table} not implemented`)
 
     console.warn('rate not implemented')
