@@ -3,7 +3,7 @@ import { generatePoints } from './points.js';
 import { render } from './render.js';
 const wait = ms => new Promise(res => setTimeout(res, ms));
 
-const elements = [...document.getElementsByClassName('js-validation')];
+const elements = [...document.getElementsByClassName('propertyInput')];
 
 for (const element of elements) {
     const validationType = element.dataset.validationType;
