@@ -16,8 +16,11 @@ for (const element of elements) {
         validationFunction = inp => (inp ? { text: inp, value: parseFloat(inp) } : { text: null, value: null });
     };
 
-    const changeCallback = (input, preventGlobalChange) => {
-        element.value = validationFunction(input ?? element.value).text ?? element.placeholder;
+    const isText = element.tagName === 'INPUT' && element.type === 'text';
+
+    const changeCallback = (preventGlobalChange) => {
+        if (isText)
+            element.value = validationFunction(element.value).text ?? element.placeholder;
         onGlobalChange();
     };
 
@@ -27,23 +30,29 @@ for (const element of elements) {
         changeCallback
     };
 
-    element.addEventListener('keypress', async event => {
-        if (event.key === 'Enter') {
-            changeCallback();
-            // element.blur();
-            element.select();
-        }
-    });
+    if (isText) {
+        element.addEventListener('keypress', async event => {
+            if (event.key === 'Enter') {
+                changeCallback();
+                // element.blur();
+                element.select();
+            }
+        });
+        element.addEventListener('click', () => element.select());
+    }
 
     element.addEventListener('blur', () => changeCallback());
-    element.addEventListener('click', () => element.select());
 }
 for (const { changeCallback } of Object.values(properties))
-    changeCallback(null, true);
+    changeCallback(true);
 onGlobalChange();
 
 
 function onGlobalChange() {
-    const points = generatePoints(Object.values(properties).map(({ validationFunction, element }) => validationFunction(element.value).value))
+    let propertyValues = {};
+    for (const [name, { element, validationFunction }] of Object.entries(properties))
+        propertyValues[name] = validationFunction(element.value).value;
+
+    const points = generatePoints(propertyValues);
     render(points);
 }
