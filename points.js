@@ -17,7 +17,7 @@ function generateSineTablePoints({ precision }) {
     let points = [];
 
     for (let i = 0; i < precision; i++) {
-        let x = i / precision;
+        let x = i / (precision - 1); // -1 so there is one at the end
         let y = Math.sin(x * 2 * Math.PI) / 2 + 0.5;
         points.push([x, y]);
     }
@@ -29,7 +29,7 @@ function generateTangentTablePoints({ precision }) {
     let points = [];
 
     for (let i = 0; i < precision; i++) {
-        let x = i / precision;
+        let x = i / (precision - 1); // -1 so there is one at the end
         let y = Math.tan(x * 2 * Math.PI) / 20 + 0.5;
         y = Math.max(0, y);
         y = Math.min(1, y);
