@@ -2,7 +2,7 @@ const canvas = document.getElementById('render');
 const ctx = canvas.getContext("2d");
 
 const xScale = 500;
-const yScale = 500;
+const yScale = -500;
 
 export function render(points) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
