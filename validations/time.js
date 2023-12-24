@@ -21,6 +21,9 @@ export function time(inp) {
         secondAmount += amount * typeCharacters[index][1];
     }
 
+    if (secondAmount < 0)
+        secondAmount = 0;
+
     let typeAmounts = [];
 
     for (const [type, typeSecondAmount] of [...typeCharacters].reverse()) {
