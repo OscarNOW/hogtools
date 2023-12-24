@@ -21,6 +21,8 @@ function generateSineTablePoints({ precision }) {
         let y = Math.sin(x * 2 * Math.PI) / 2 + 0.5;
         points.push([x, y]);
     }
+
+    return points;
 }
 
 export function generatePoints({
