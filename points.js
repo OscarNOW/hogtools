@@ -1,5 +1,5 @@
 const tablePoints = {
-    sine: generateSineTablePoints({ precision: 10 }),
+    sine: generateSineTablePoints({ precision: 100 }),
     tangent: [],
     step: [[0.49, 1], [0.51, 0]],
     sawTooth: [[0, 0.5], [0.25, 1], [0.75, 0], [1, 0.5]],
