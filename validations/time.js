@@ -57,5 +57,3 @@ export function time(inp) {
         value: secondAmount
     };
 }
-
-window.a = time;
