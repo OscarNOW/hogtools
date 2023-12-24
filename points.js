@@ -33,6 +33,9 @@ export function generatePoints({
     direction
 }) {
     let points = tablePoints[table];
+
+    if (points.length === 0) throw new Error(`${table} not implemented`)
+
     console.warn('rate not implemented')
     console.warn('offset not implemented')
     console.warn('begin not implemented')
