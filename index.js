@@ -39,7 +39,8 @@ for (const element of elements) {
             }
         });
         element.addEventListener('click', () => element.select());
-    }
+    } else
+        element.addEventListener('change', () => changeCallback());
 
     element.addEventListener('blur', () => changeCallback());
 }
