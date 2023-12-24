@@ -15,6 +15,7 @@ for (const element of elements) {
     const changeCallback = (input) => {
         element.value = validationFunction(input ?? element.value) ?? element.placeholder;
     };
+    changeCallback(element.placeholder);
 
     element.addEventListener('keypress', async event => {
         if (event.key === 'Enter') {
@@ -25,5 +26,5 @@ for (const element of elements) {
     });
 
     element.addEventListener('blur', () => changeCallback());
-    changeCallback(element.placeholder);
+    element.addEventListener('click', () => element.select());
 }
